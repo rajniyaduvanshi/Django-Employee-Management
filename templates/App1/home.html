@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        nav {
+            background: #172554;
+            color: white;
+            padding: 20px 8%;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 80px auto;
+            padding: 45px 25px;
+            text-align: center;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px #00000012;
+        }
+
+        h1 {
+            color: #1d4ed8;
+            font-size: 36px;
+        }
+
+        p {
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 15px 8px 0;
+            padding: 13px 22px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .btn:hover {
+            background: #1e40af;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>Employee Management System</nav>
+
+    <div class="container">
+        <h1>Welcome to Employee Management System</h1>
+
+        <p>
+            Manage employee details, departments and companies
+            easily from one place.
+        </p>
+
+        <a href="{% url 'empdata' %}" class="btn">
+            View Employees
+        </a>
+
+        <a href="{% url 'addEmp' %}" class="btn">
+            Add Employee
+        </a>
+    </div>
+</body>
+</html>

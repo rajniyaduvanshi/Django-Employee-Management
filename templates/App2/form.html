@@ -1,0 +1,50 @@
+
+{% extends "App2/base.html" %}
+
+{% block content %}
+<div class="card">
+    <h2>Add New Employee</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Employee Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="email" name="email" required>
+
+        <label>Age</label>
+        <input type="number" name="age" min="1" required>
+
+        <label>Salary</label>
+        <input type="number" name="salary" min="0" step="0.01" required>
+
+        <label>Address</label>
+        <textarea name="address" required></textarea>
+
+        <label>Department</label>
+        <select name="department" required>
+            <option value="">Select Department</option>
+            {% for d in department_data %}
+                <option value="{{ d.id }}">{{ d.name }}</option>
+            {% empty %}
+                <option value="">No departments available</option>
+            {% endfor %}
+        </select>
+
+        <label>Company</label>
+        <select name="company" required>
+            <option value="">Select Company</option>
+            {% for c in company_data %}
+                <option value="{{ c.id }}">{{ c.name }}</option>
+            {% empty %}
+                <option value="">No companies available</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Save Employee</button>
+        <a class="btn" href="{% url 'empdata' %}">Back</a>
+    </form>
+</div>
+{% endblock %}
